@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+//import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 import Header from './include/Header';
 import Member from './components/Member';
@@ -19,7 +20,7 @@ import './css/style.scss';
 function App() {
   return (
     <>
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/" element={<Header />}>
           <Route index element={<Home />} />
@@ -34,7 +35,7 @@ function App() {
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
-    </BrowserRouter>    
+    </Router>    
     </>
   );
 }

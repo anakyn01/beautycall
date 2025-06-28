@@ -1,5 +1,4 @@
 import { Outlet, Link } from "react-router-dom";
-
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -14,12 +13,11 @@ function Header() {
       {[false].map((expand) => (
         <Navbar key={expand} expand={expand} className="bg-danger">
           <Container fluid>
-            <Navbar.Brand href="/"  className="text-white">B</Navbar.Brand>
+            <Navbar.Brand as={Link} to="/" className="text-white">B</Navbar.Brand>
             <Navbar.Toggle
-  aria-controls={`offcanvasNavbar-expand-${expand}`}
-  className="custom-toggler"
-/>
-
+              aria-controls={`offcanvasNavbar-expand-${expand}`}
+              className="custom-toggler"
+            />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
@@ -27,17 +25,17 @@ function Header() {
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  <Nav.Link href="/">뷰티콜 MyPage</Nav.Link>
+                  <Nav.Link as={Link} to="/">뷰티콜 MyPage</Nav.Link>
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="find">프리랜서찾기</Nav.Link>
-                  <Nav.Link href="member">회원정보수정</Nav.Link>
-                  <Nav.Link href="edu">교육신청목록</Nav.Link>
-                  <Nav.Link href="charge">충전내역</Nav.Link>
-                  <Nav.Link href="point">포인트사용내역</Nav.Link>
-                  <Nav.Link href="call">콜승인내역</Nav.Link>
+                  <Nav.Link as={Link} to="/find">프리랜서찾기</Nav.Link>
+                  <Nav.Link as={Link} to="/member">회원정보수정</Nav.Link>
+                  <Nav.Link as={Link} to="/edu">교육신청목록</Nav.Link>
+                  <Nav.Link as={Link} to="/charge">충전내역</Nav.Link>
+                  <Nav.Link as={Link} to="/point">포인트사용내역</Nav.Link>
+                  <Nav.Link as={Link} to="/call">콜승인내역</Nav.Link>
                   <NavDropdown
                     title="Dropdown"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
