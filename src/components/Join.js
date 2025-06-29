@@ -35,17 +35,18 @@ function Join() {
 
   return (
     <div className="bg-white wrap p-2">
-      <h2 className='mt-4 mb-2'>회원가입</h2>
+      <h2 className='mt-4 mb-2'>회원가입<small className='text-secondary mx-2'>프리랜서 매장</small>
+      </h2>
       <form onSubmit={handleSubmit} className='was-validated'>
         {error && <div className="error">{error}</div>}
         <div className="form-group">
-          <label htmlFor="email" className='form-label'>이메일</label>
+          <label htmlFor="email" className='form-label'>아이디</label>
           <input
             type="email"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="이메일을 입력하세요"
+            placeholder="아이디나 이메일을 입력하세요"
             required
             className='form-control'
           />
@@ -62,23 +63,127 @@ function Join() {
             className='form-control'
             required
           />
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="비밀번호를 다시 입력하세요"
+            className='form-control mt-3'
+            required
+          />
         </div>
 
         <div className="form-group mt-3">
-          <label htmlFor="nickname" className='form-label'>닉네임</label>
+          <label htmlFor="nickname" className='form-label'>이름</label>
           <input
             type="text"
             id="nickname"
             value={nickname}
             onChange={(e) => setNickname(e.target.value)}
-            placeholder="닉네임을 입력하세요"
+            placeholder="이름을 입력하세요"
             className='form-control'
             required
           />
         </div>
+
+        <div className="form-group mt-3">
+          <label htmlFor="nickname" className='form-label'>생년월일</label>
+          <div className='input-group'>
+          <select class="form-select" >
+            <option>년</option>
+            <option>1900</option>
+            <option>2000</option>
+            <option>2010</option>
+            <option>2020</option>
+          </select>
+
+          <select class="form-select" >
+            <option>월</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+
+          <select class="form-select" >
+            <option>일</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+          
+          </div>
+        </div>
+
+<div className="form-group mt-3">
+          <label htmlFor="nickname" className='form-label'>휴대폰</label>
+          <div className='input-group'>
+          <input
+            type="text"
+            id="nickname"
+            value={nickname}
+            onChange={(e) => setNickname(e.target.value)}
+            placeholder="휴대폰 번호를 입력하세요"
+            className='form-control'
+            required
+          />
+          <Button variant='danger'>인증버튼</Button>
+          </div>
+        </div>
+
+        <div className="form-group mt-3">
+          <label htmlFor="nickname" className='form-label'>자격증 번호</label>
+          <input
+            type="text"
+            id="nickname"
+            value={nickname}
+            onChange={(e) => setNickname(e.target.value)}
+            placeholder="자격증 번호를 입력하세요"
+            className='form-control'
+            required
+          />
+        </div>
+
+        <div className="form-group mt-3">
+          <label htmlFor="nickname" className='form-label'>카카오톡 ID</label>
+          <input
+            type="text"
+            id="nickname"
+            value={nickname}
+            onChange={(e) => setNickname(e.target.value)}
+            placeholder="카카오톡 id를 입력하세요"
+            className='form-control'
+            required
+          />
+        </div>
+
+         <div className="form-group mt-3">
+          <label htmlFor="nickname" className='form-label'>브랜드</label>
+          <select class="form-select" >
+            <option>아래항목중에 선택하세요</option>
+            <option>벤자롱아로미</option>
+            <option>풋샵</option>
+            <option>너에브랜드</option>
+            <option>너님브랜드</option>
+          </select>
+        </div>
+
+        <div className="form-group mt-3">
+          <label htmlFor="nickname" className='form-label'>종목</label>
+          <select class="form-select" >
+            <option>아래항목중에 선택하세요</option>
+            <option>헤어초보</option>
+            <option>헤어중급</option>
+            <option>헤어고급</option>
+            <option>테라피스트</option>
+          </select>
+        </div>
+
 <div className='d-grid gap-2 mt-4 mb-2'>
         <Button type="submit" disabled={loading} variant='danger' size='lg'>
-          {loading ? '가입 중...' : '회원가입'}
+          {loading ? '가입 중...' : '회원가입완료'}
         </Button>
 </div>
       </form>

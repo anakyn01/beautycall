@@ -16,6 +16,10 @@ function Home() {
     navigate('/kakao');
   };
 
+  const findClick = () => {
+    navigate('/idpw');
+  };
+
   return (
     <>
     <div className='bg-white wrap'>
@@ -83,7 +87,7 @@ function Home() {
   <Button variant="outline-warning" className='py-2' size="lg" onClick={cacaoClick}>카카오톡으로 회원가입</Button>
 </div>
 <div className='d-grid gap-2 my-2'>
-  <Button variant="outline-danger" className='' size="lg">ID / PW찾기</Button>
+  <Button variant="outline-danger" className='' size="lg" onClick={findClick}>ID / PW찾기</Button>
 </div>
             </form>
         </p>
@@ -109,7 +113,7 @@ function Home() {
   <Button variant="outline-warning" className='py-2' size="lg" onClick={cacaoClick}>카카오톡으로 회원가입</Button>
 </div>
 <div className='d-grid gap-2 my-2'>
-  <Button variant="outline-danger" className='' size="lg">ID / PW찾기</Button>
+  <Button variant="outline-danger" className='' size="lg" onClick={findClick}>ID / PW찾기</Button>
 </div>
 
             </form>

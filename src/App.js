@@ -11,7 +11,7 @@ import Call from './components/Call';
 import Join from './components/Join';
 import KakaoJoin from './components/KakaoJoin';
 import Search from './components/Search';
-
+import IdPw from './components/IdPw';
 import NoPage from './components/NoPage';
 import './css/style.scss';
 
@@ -32,6 +32,7 @@ function App() {
           <Route path="join" element={<Join/>} />
           <Route path="kakao" element={<KakaoJoin/>} />
           <Route path="find" element={<Search/>} />
+          <Route path="idpw" element={<IdPw/>} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

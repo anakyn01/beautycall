@@ -33,7 +33,7 @@ function Header() {
                   <Nav.Link as={Link} to="/find">프리랜서찾기</Nav.Link>
                   <Nav.Link as={Link} to="/member">회원정보수정</Nav.Link>
                   <Nav.Link as={Link} to="/edu">교육신청목록</Nav.Link>
-                  <Nav.Link as={Link} to="/charge">충전내역</Nav.Link>
+                  {/* <Nav.Link as={Link} to="/charge">충전내역</Nav.Link>
                   <Nav.Link as={Link} to="/point">포인트사용내역</Nav.Link>
                   <Nav.Link as={Link} to="/call">콜승인내역</Nav.Link>
                   <NavDropdown
@@ -48,7 +48,7 @@ function Header() {
                     <NavDropdown.Item href="#action5">
                       Something else here
                     </NavDropdown.Item>
-                  </NavDropdown>
+                  </NavDropdown>*/}
                 </Nav>
                 <Form className="d-flex">
                   <Form.Control
@@ -57,7 +57,7 @@ function Header() {
                     className="me-2"
                     aria-label="Search"
                   />
-                  <Button variant="outline-success">Search</Button>
+                  <Button variant="outline-danger">Search</Button>
                 </Form>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

@@ -1,34 +1,24 @@
-import {Nav,Carousel,Tabs,Tab} from 'react-bootstrap';
-import KakaoMap from './KakaoMap';
+import {Table} from 'react-bootstrap';
+
 
 function Edu() {
   return (
     <>
-  <div className='bg-white wrap'>
-    <KakaoMap/>
-
-      <Tabs
-      defaultActiveKey="call"
-      id="fill-tab-example"
-      className="mb-3"
-      fill
-    >
-      <Tab eventKey="call" title="call">
-        <p className='p-2'>Tab content for Home</p>
-      </Tab>
-      <Tab eventKey="ok" title="ok">
-        <p className='p-2'>Tab content for Profile</p>
-      </Tab>
-      <Tab eventKey="point" title="point">
-        <p className='p-2'>Tab content for Loooonger Tab</p>
-      </Tab>
-      <Tab eventKey="charge" title="charge">
-        <p className='p-2'>Tab content for Contact</p>
-      </Tab>
-      <Tab eventKey="edu" title="Edu">
-        <p className='p-2'>Tab content for Contact</p>
-      </Tab>
-    </Tabs>
+<div className='bg-white wrap p-3'>
+   <h5>교육신청목록</h5>
+   <Table>
+    <thead>
+      <tr>
+        <td>신청날짜</td><td>종목</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2025-06-29</td>
+        <td>[교육안내및모집] 교욱 프로그램 ...</td>
+      </tr>
+    </tbody>
+   </Table>
 </div>
     </>
   );
