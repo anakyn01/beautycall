@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/beautycall/static/css/main.25ea7885.css",
-    "main.js": "/beautycall/static/js/main.0116dffb.js",
+    "main.css": "/beautycall/static/css/main.a9df9c95.css",
+    "main.js": "/beautycall/static/js/main.f864ad58.js",
     "static/js/453.c8d328d3.chunk.js": "/beautycall/static/js/453.c8d328d3.chunk.js",
     "static/media/3.png": "/beautycall/static/media/3.3ebdbb9ce0d5aebe0479.png",
     "static/media/2.png": "/beautycall/static/media/2.c211cc98d42076118ebc.png",
     "static/media/1.png": "/beautycall/static/media/1.12a7d95bc32f7f4a54e0.png",
     "index.html": "/beautycall/index.html",
-    "main.25ea7885.css.map": "/beautycall/static/css/main.25ea7885.css.map",
-    "main.0116dffb.js.map": "/beautycall/static/js/main.0116dffb.js.map",
+    "main.a9df9c95.css.map": "/beautycall/static/css/main.a9df9c95.css.map",
+    "main.f864ad58.js.map": "/beautycall/static/js/main.f864ad58.js.map",
     "453.c8d328d3.chunk.js.map": "/beautycall/static/js/453.c8d328d3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.25ea7885.css",
-    "static/js/main.0116dffb.js"
+    "static/css/main.a9df9c95.css",
+    "static/js/main.f864ad58.js"
   ]
 }
