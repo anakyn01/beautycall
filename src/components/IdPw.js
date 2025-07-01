@@ -72,7 +72,7 @@ function IdPw() {
 
         <div className="form-group mt-3">
           <label htmlFor="nickname" className='form-label'>종목</label>
-          <select class="form-select" >
+          <select class="form-select form-control-user py-2" >
             <option>아래항목중에 선택하세요</option>
             <option>헤어초보</option>
             <option>헤어중급</option>
@@ -87,12 +87,12 @@ function IdPw() {
             type="text"
             id="nickname"
             placeholder="가입시 입력했던 자격증 번호를 입력하세요"
-            className='form-control'
+            className='form-control form-control-user py-2'
             required
           />
         </div>
             <div className='d-grid gap-2 mt-3'>
-                <Button variant="danger"size="lg" className='py-2'>확인</Button>
+                <Button variant="danger"size="lg" className='py-2 btn-user'>확인</Button>
             </div>
 
           </form>
@@ -111,7 +111,7 @@ function IdPw() {
             type="text"
             id="nickname"
             placeholder="아이디를 입력하세요"
-            className='form-control'
+            className='form-control form-control-user py-2'
             required
           />
         </div>
@@ -122,12 +122,12 @@ function IdPw() {
             type="text"
             id="nickname"
             placeholder="가입시 입력했던 휴대폰 번호를 입력하세요"
-            className='form-control'
+            className='form-control form-control-user py-2'
             required
           />
         </div>
             <div className='d-grid gap-2 mt-3'>
-                <Button variant="danger"size="lg" className='py-2'>확인</Button>
+                <Button variant="danger"size="lg" className='py-2 btn-user'>확인</Button>
             </div>
 
             </form>

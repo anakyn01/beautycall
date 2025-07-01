@@ -46,7 +46,7 @@ function Search() {
 
     <div className='p-3'>
         <div className='d-grid gap-2 my-2'>
-            <Button variant="danger" className='' size="lg">검색하기</Button>
+            <Button variant="danger" className='btn-user py-3' size="lg">검색하기</Button>
         </div>
         <h6 className='mt-4 mb-2 fw-bold'>
         호출받은 관리사

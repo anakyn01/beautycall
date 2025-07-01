@@ -52,5 +52,17 @@ top:30%;
       white-space: nowrap; /* 버튼들이 한 줄로 표시되도록 설정 */
       padding: 10px;
     }
-
-
+.form-control-user {
+    font-size: .8rem;
+    border-radius: 10rem;
+    padding: 1.5rem 1rem;
+}
+.btn-user {
+    font-size: .8rem;
+    border-radius: 10rem;
+    padding: .75rem 1rem;
+}
+.custom-checkbox:invalid {
+  box-shadow: 0 0 0 2px red;
+  border-radius: 3px;
+}

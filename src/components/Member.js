@@ -48,7 +48,7 @@ const [email, setEmail] = useState('');
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="비밀번호를 입력하세요"
-            className='form-control'
+            className='form-control form-control-user py-2'
             required
           />
           <input
@@ -57,7 +57,7 @@ const [email, setEmail] = useState('');
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="비밀번호를 다시 입력하세요"
-            className='form-control mt-3'
+            className='form-control mt-3 form-control-user py-2'
             required
           />
         </div>
@@ -70,12 +70,12 @@ const [email, setEmail] = useState('');
             value={nickname}
             onChange={(e) => setNickname(e.target.value)}
             placeholder="선택한 본인에 이름"
-            className='form-control'
+            className='form-control form-control-user py-2'
             disabled
           />
         </div>
 
-<div className="form-group mt-3">
+<div className="form-group mt-3 ">
           <label htmlFor="nickname" className='form-label'>휴대폰</label>
           <div className='input-group'>
           <input
@@ -84,10 +84,10 @@ const [email, setEmail] = useState('');
             value={nickname}
             onChange={(e) => setNickname(e.target.value)}
             placeholder="휴대폰 번호를 입력하세요"
-            className='form-control'
+            className='form-control form-control-user py-2'
             required
           />
-          <Button variant='danger'>인증버튼</Button>
+          <Button variant='danger' className='btn-user'>인증버튼</Button>
           </div>
         </div>
 
@@ -99,7 +99,7 @@ const [email, setEmail] = useState('');
             value={nickname}
             onChange={(e) => setNickname(e.target.value)}
             placeholder="자격증 번호를 입력하세요"
-            className='form-control'
+            className='form-control form-control-user py-2'
             required
           />
         </div>
@@ -112,14 +112,14 @@ const [email, setEmail] = useState('');
             value={nickname}
             onChange={(e) => setNickname(e.target.value)}
             placeholder="카카오톡 id를 입력하세요"
-            className='form-control'
+            className='form-control form-control-user py-2'
             required
           />
         </div>
 
          <div className="form-group mt-3">
           <label htmlFor="nickname" className='form-label'>브랜드</label>
-          <select class="form-select" >
+          <select class="form-select form-control-user py-2" >
             <option>아래항목중에 선택하세요</option>
             <option>벤자롱아로미</option>
             <option>풋샵</option>
@@ -130,7 +130,7 @@ const [email, setEmail] = useState('');
 
         <div className="form-group mt-3">
           <label htmlFor="nickname" className='form-label'>종목</label>
-          <select class="form-select" >
+          <select class="form-select form-control-user py-2" >
             <option>아래항목중에 선택하세요</option>
             <option>헤어초보</option>
             <option>헤어중급</option>
@@ -139,11 +139,11 @@ const [email, setEmail] = useState('');
           </select>
         </div>
 
-<div className='d-flex mt-3 justify-content-between'>
-        <Button type="submit" disabled={loading} variant='danger' className='w-49' size='lg'>
+<div className='btn-group w-100 mt-4'>
+        <Button type="submit" disabled={loading} variant='danger' className='w-49 btn-user' size='lg'>
           {loading ? '가입 중...' : '수정완료'}
         </Button>
-        <Button type="submit" variant='secondary' className='w-49' size='lg'>
+        <Button type="submit" variant='secondary' className='w-49 btn-user' size='lg'>
            취소
         </Button>
 </div>

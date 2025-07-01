@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Button } from 'react-bootstrap';
 
 function KakaoJoin() {
  const [userInfo, setUserInfo] = useState(null); // 사용자 정보를 저장할 상태
@@ -8,11 +9,22 @@ function KakaoJoin() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // 카카오 SDK 초기화
-    if (window.Kakao) {
-      window.Kakao.init('YOUR_KAKAO_JS_KEY'); // 카카오 개발자 사이트에서 제공하는 JavaScript Key로 변경하세요.
+  if (!window.Kakao) {
+    const script = document.createElement('script');
+    script.src = "https://developers.kakao.com/sdk/js/kakao.min.js";
+    script.async = true;
+    script.onload = () => {
+      if (!window.Kakao.isInitialized()) {
+        window.Kakao.init("a0bf46b6f85adb1c911c864cba503e22");
+      }
+    };
+    document.body.appendChild(script);
+  } else {
+    if (!window.Kakao.isInitialized()) {
+      window.Kakao.init("a0bf46b6f85adb1c911c864cba503e22");
     }
-  }, []);
+  }
+}, []);
 
   const handleKakaoLogin = () => {
     if (!window.Kakao) {
@@ -72,11 +84,11 @@ function KakaoJoin() {
     <>
     <div className='bg-white wrap'>
      <div className="container">
-        <h2>카카오톡으로 회원가입</h2>
+        <h2 className='mt-4 mb-2 text-secondary'>카카오톡으로 회원가입</h2>
         {!userInfo ? (
-          <button onClick={handleKakaoLogin} className="kakao-login-btn">
-            카카오톡으로 로그인
-          </button>
+          <Button onClick={handleKakaoLogin} variant="outline-warning">
+            카카오톡으로 회원가입
+          </Button>
         ) : (
           <div className="user-info">
             <img src={userInfo.properties.profile_image} alt="profile" />
