@@ -14,6 +14,8 @@ import Search from './components/Search';
 import IdPw from './components/IdPw';
 import NoPage from './components/NoPage';
 import './css/style.scss';
+import Loading from './components/Loading';
+import MyPage from './components/MyPage';
 
 
 
@@ -24,10 +26,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Header />}>
           <Route index element={<Home />} />
+          <Route path="mypage" element={<MyPage />} />
           <Route path="member" element={<Member />} />
           <Route path="edu" element={<Edu />} />
           <Route path="charge" element={<Charge/>} />
           <Route path="point" element={<Point/>} />
+          <Route path="splash" element={<Loading/>} />
           <Route path="call" element={<Call/>} />
           <Route path="join" element={<Join/>} />
           <Route path="kakao" element={<KakaoJoin/>} />

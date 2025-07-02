@@ -1,36 +1,71 @@
-import {Tabs,Tab} from 'react-bootstrap';
-import KakaoMap from './KakaoMap';
+import { useState } from 'react';
+import { Table } from 'react-bootstrap';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import { format } from 'date-fns';
 
 function Point() {
-  return (
-    <>
-    <div className='bg-white wrap'>
-   <KakaoMap/>
+  // 더미 데이터 (실제로는 서버에서 받아오는 구조)
+  const pointData = [
+    { date: '2025-07-01', description: '콜비 사용', point: -1000 },
+    { date: '2025-07-02', description: '이벤트 적립', point: 2000 },
+    { date: '2025-07-01', description: '포인트 충전 보너스', point: 500 },
+  ];
 
-      <Tabs
-      defaultActiveKey="call"
-      id="fill-tab-example"
-      className="mb-3"
-      fill
-    >
-      <Tab eventKey="call" title="call">
-        <p className='p-2'>Tab content for Home</p>
-      </Tab>
-      <Tab eventKey="ok" title="ok">
-        <p className='p-2'>Tab content for Profile</p>
-      </Tab>
-      <Tab eventKey="point" title="point">
-        <p className='p-2'>Tab content for Loooonger Tab</p>
-      </Tab>
-      <Tab eventKey="charge" title="charge">
-        <p className='p-2'>Tab content for Contact</p>
-      </Tab>
-      <Tab eventKey="edu" title="Edu">
-        <p className='p-2'>Tab content for Contact</p>
-      </Tab>
-    </Tabs>
-</div>
-    </>
+  const [selectedDate, setSelectedDate] = useState(null);
+
+  // 선택한 날짜에 맞는 데이터 필터링
+  const filteredData = selectedDate
+    ? pointData.filter((item) => item.date === format(selectedDate, 'yyyy-MM-dd'))
+    : pointData;
+
+  return (
+    <div className='bg-white wrap p-3'>
+      <h5 className='mb-3'>포인트 사용내역</h5>
+
+      <div className='mb-4 d-flex align-items-center gap-3'>
+        <label className='fs-13'>날짜 선택:</label>
+        <DatePicker
+          selected={selectedDate}
+          onChange={(date) => setSelectedDate(date)}
+          dateFormat="yyyy-MM-dd"
+          placeholderText="날짜를 선택하세요"
+          className='form-control'
+        />
+        {selectedDate && (
+          <button className='btn btn-sm btn-outline-secondary fs-13' onClick={() => setSelectedDate(null)}>
+            전체 보기
+          </button>
+        )}
+      </div>
+
+      <Table bordered hover>
+        <thead>
+          <tr>
+            <th>날짜</th>
+            <th>내역</th>
+            <th>포인트</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredData.length === 0 ? (
+            <tr>
+              <td colSpan="3" className='text-center'>해당 날짜에 사용내역이 없습니다.</td>
+            </tr>
+          ) : (
+            filteredData.map((item, idx) => (
+              <tr key={idx}>
+                <td>{item.date}</td>
+                <td>{item.description}</td>
+                <td className={item.point < 0 ? 'text-danger' : 'text-success'}>
+                  {item.point > 0 ? `+${item.point.toLocaleString()}` : item.point.toLocaleString()}P
+                </td>
+              </tr>
+            ))
+          )}
+        </tbody>
+      </Table>
+    </div>
   );
 }
 

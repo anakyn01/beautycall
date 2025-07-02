@@ -18,8 +18,10 @@ const KakaoMap = () => {
     document.head.appendChild(script);
   }, []);
 
-  return <div id="map" style={{ width: '100%', height: '30vh' }}>
-   
+  return <div id="map" style={{ width: '100%', height: '400px' }}>
+           <div className='d-flex justify-content-center'>
+             <div className='container msg p-3 text-white text-center'>프리랜서 10km 반경 0명 대기</div>
+           </div>
   </div>;
 };
 

@@ -1,18 +1,26 @@
 import {Carousel,Tabs,Tab, Button} from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import image1 from '../img/1.png';
 import image2 from '../img/2.png';
 import image3 from '../img/3.png';
 
 
 function Home() {
+  useEffect(() => {
+    if (window.Kakao && !window.Kakao.isInitialized()) {
+      window.Kakao.init('a0bf46b6f85adb1c911c864cba503e22'); // 자신의 JavaScript 키로 교체
+    }
+  }, []);
+
+
   const navigate = useNavigate();
 
   const joinClick = () => {
     navigate('/join');
   };
 
-  const cacaoClick2 = () => {
+  const cacaoClick = () => {
     navigate('/kakao');
   };
 
@@ -20,33 +28,33 @@ function Home() {
     navigate('/idpw');
   };
 
-  const cacaoClick = () => {
-    if (!window.Kakao || !window.Kakao.isInitialized()) {
-      console.error('Kakao SDK is not initialized');
-      return;
-    }
+  const cacaoMember = () => {
+  if (!window.Kakao || !window.Kakao.isInitialized()) {
+    console.error('Kakao SDK is not initialized');
+    return;
+  }
 
-    window.Kakao.Auth.login({
-      scope: 'profile_nickname, account_email',
-      success: function (authObj) {
-        console.log('로그인 성공', authObj);
-        window.Kakao.API.request({
-          url: '/v2/user/me',
-          success: function (res) {
-            console.log('사용자 정보', res);
-            // 여기에 사용자 정보 처리 코드 추가
-            // 예: navigate('/dashboard');
-          },
-          fail: function (error) {
-            console.error('사용자 정보 요청 실패', error);
-          }
-        });
-      },
-      fail: function (err) {
-        console.error('카카오 로그인 실패', err);
-      }
-    });
-  };
+  window.Kakao.Auth.login({
+    scope: 'profile_nickname, account_email',
+    redirectUri: 'http://localhost:3000/oauth', // 🔴 여기 추가됨!
+    success: function (authObj) {
+      console.log('로그인 성공', authObj);
+      window.Kakao.API.request({
+        url: '/v2/user/me',
+        success: function (res) {
+          console.log('사용자 정보', res);
+          // 사용자 정보 처리
+        },
+        fail: function (error) {
+          console.error('사용자 정보 요청 실패', error);
+        }
+      });
+    },
+    fail: function (err) {
+      console.error('카카오 로그인 실패', err);
+    }
+  });
+};
 
   return (
     <>
@@ -110,7 +118,7 @@ function Home() {
               </div>
 
               <div className='d-grid gap-2 mt-2 mb-3'>
-                <Button variant="warning" size="lg" className='py-2 btn-user' onClick={cacaoClick}>카카오톡으로 로그인</Button>
+                <Button variant="warning" size="lg" className='py-2 btn-user' onClick={cacaoMember}>카카오톡으로 로그인</Button>
               </div>
 
               <div className='d-grid gap-2 my-2'>
@@ -118,7 +126,7 @@ function Home() {
               </div>
 
               <div className='d-grid gap-2 mb-3'>
-                <Button variant="outline-warning" size="lg" className='py-2 btn-user' onClick={cacaoClick}>카카오톡으로 회원가입</Button>
+                <Button variant="outline-warning" size="lg" className='py-2 btn-user' onClick={cacaoMember}>카카오톡으로 회원가입</Button>
               </div>
 
               <div className='d-grid gap-2 my-2'>
@@ -142,7 +150,7 @@ function Home() {
             </div>
 
             <div className='d-grid gap-2 mt-2 mb-3'>
-  <Button variant="warning" className='py-2 btn-user' size="lg" onClick={cacaoClick}>카카오톡으로 로그인</Button>
+  <Button variant="warning" className='py-2 btn-user' size="lg" onClick={cacaoMember}>카카오톡으로 로그인</Button>
 </div>
 
 
@@ -151,7 +159,7 @@ function Home() {
   <Button variant="outline-danger" className='btn-user py-2' size="lg" onClick={joinClick}>회원가입</Button>
 </div>
 <div className='d-grid gap-2 my-2'>
-  <Button variant="outline-warning" className='btn-user py-2' size="lg" onClick={cacaoClick}>카카오톡으로 회원가입</Button>
+  <Button variant="outline-warning" className='btn-user py-2' size="lg" onClick={cacaoMember}>카카오톡으로 회원가입</Button>
 </div>
 <div className='d-grid gap-2 mt-3'>
   <Button variant="outline-danger" className='btn-user py-2' size="lg" onClick={findClick}>ID / PW찾기</Button>

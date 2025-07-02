@@ -28,24 +28,23 @@ width:35% !important;
     max-width:100vw;
     background-color: rgba(0,0,0,.8);
     z-index: 999;
-    position: absolute;
-    top:30%;
+    position: relative;margin-top: 350px;
     }
   }
 }
 @media screen and (max-width: 280px), screen and (max-width: 768px) {
   body {
     margin:0 auto; height:100vh; width:100vw; max-width:100vw;
-  }
-  .msg{
+      .msg{
 padding:17px 40px !important;
 width:100%;
-max-width: 100%;
+max-width: 100vw;
 background-color: rgba(0,0,0,.8);
-z-index: 1;
-position: fixed;
-top:30%;
+z-index: 999;
+position:relative;margin-top: 350px;
 }
+  }
+
 }
     .button-container {
       overflow-x: auto; /* 수평 스크롤 활성화 */
@@ -58,11 +57,26 @@ top:30%;
     padding: 1.5rem 1rem;
 }
 .btn-user {
-    font-size: .8rem;
+    font-size: 1rem;
     border-radius: 10rem;
     padding: .75rem 1rem;
 }
 .custom-checkbox:invalid {
   box-shadow: 0 0 0 2px red;
   border-radius: 3px;
+}
+.fs-10{
+font-size: 10px !important;
+}
+.fs-11{
+font-size: 11px !important;
+}
+.fs-12{
+font-size: 12px !important;
+}
+.fs-13{
+font-size: 13px !important;
+}
+.fs-14{
+font-size: 14px !important;
 }
