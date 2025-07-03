@@ -10,10 +10,10 @@ function MyPage() {
       <Tabs
       defaultActiveKey="call"
       id="fill-tab-example"
-      className="mb-3"
+      className="mb-3 mx-100"
       fill
     >
-      <Tab eventKey="call" title="리스트">
+      <Tab eventKey="call" title="리스트" className='fs-10'>
         <p className='px-3'>
           <div className='d-flex justify-content-between align-items-center border-bottom py-3'>
             <div className=''>
@@ -67,7 +67,7 @@ function MyPage() {
           </div>
         </p>
       </Tab>
-      <Tab eventKey="ok" title="점수">
+      <Tab eventKey="ok" title="점수" className='fs-10'>
         <p className='px-3'>
                     <div className='d-flex justify-content-between align-items-center border-bottom py-3'>
             <div className=''>
@@ -90,12 +90,12 @@ function MyPage() {
         </p>
       </Tab>
 
-<Tab eventKey="point" title="포인트">
+<Tab eventKey="point" title="포인트" className='fs-10'>
   <div className='px-3'>
     <div className='mb-3'>
       <h5 className='mt-5 mb-3 fs-16 fw-bold'>현재 보유 포인트</h5>
       <div className='border rounded-5 p-3 text-center bg-danger'>
-        <strong className='text-white'>5,000P</strong>
+        <strong className='text-white fs-15'>5,000P</strong>
       </div>
     </div>
 
@@ -117,7 +117,7 @@ function MyPage() {
   </div>
 </Tab>
 
-<Tab eventKey="charge" title="충전하기">
+<Tab eventKey="charge" title="충전하기" className='fs-10'>
   <div className='px-3'>
     <h5 className='mt-5 mb-3 fw-bold fs-16'>포인트 충전</h5>
 
@@ -140,7 +140,7 @@ function MyPage() {
       
       
       
-      <Tab eventKey="edu" title="신청">
+      <Tab eventKey="edu" title="신청" className='fs-12'>
         <p className='px-3'>
            <div className='d-flex justify-content-between align-items-center border-bottom py-3'>
             <div className=''>
