@@ -36,7 +36,7 @@ const [email, setEmail] = useState('');
   return (
     <>
 <div className='bg-white wrap p-3'>
-   <h2 className='mt-5 mb-3'>회원정보수정</h2>
+   <h5 className='mt-5 mb-3'>회원정보수정</h5>
       <form onSubmit={handleSubmit} className='was-validated'>
         {error && <div className="error">{error}</div>}
 
